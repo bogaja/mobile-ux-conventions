@@ -60,6 +60,26 @@
         "Applies the Jakob test: looks at what the leading finance apps do",
         "If a center button is used anyway, says it starts the create flow and is not a destination"
       ]
+    },
+    {
+      "id": 4,
+      "name": "review-web-dashboard",
+      "prompt": "This is the shell of my Next.js learning dashboard. Students and teachers use it on their phones. Check navigation and UX in evals/fixtures/web-dashboard/AppShell.tsx before it goes live. The route folder has no loading.tsx and no error.tsx.",
+      "files": ["evals/fixtures/web-dashboard/AppShell.tsx"],
+      "expected_output": "A review in the skill's table format that uses the web checks and does not apply native-only rules.",
+      "assertions": [
+        "Flags the logo link to / as leaving the app area",
+        "Flags that the sheet can be closed while an upload runs, as HIGH because work is lost",
+        "Flags that the back action does not close the open sheet",
+        "Flags sm:px-6 overriding the safe-area padding",
+        "Flags the error text with no retry button",
+        "Flags the missing route-level loading and error states",
+        "Flags maximumScale: 1 as blocking zoom",
+        "Flags that students have no navigation on narrow screens",
+        "Flags the 24 px close button and works out the size in CSS px",
+        "Does not report missing pull to refresh, missing Sign in with Apple or store policies as findings",
+        "Lists keyboard behavior in the bottom sheet under Not checked"
+      ]
     }
   ]
 }

@@ -22,4 +22,4 @@ API names to reach for first. They are starting points, not guarantees: names, a
 
 - React Native, Expo and Flutter: prefer the navigator and tab bar that wrap the platform's own components. They bring much of the expected behavior with them, but not all of it. Flutter's Cupertino widgets are re-implementations, and JavaScript-based stacks support gestures differently. Test back gesture, tab state, tab reselect and insets on both platforms.
 - Branch per platform where the rules differ: touch target (44 pt or 48 dp), create action (toolbar or floating button), back (leading-edge swipe on iOS, system back on Android), permission pre-prompt (one button on iOS unless a legal consent needs more, a way to decline on Android).
-- Mobile web and PWA: the browser owns back and pull to refresh. Do not hijack them. Use `overscroll-behavior` only inside scroll areas that need it. Touch targets follow WCAG 2.5.8.
+- Mobile web and PWA: the browser owns back and pull to refresh. Do not hijack them. Use `overscroll-behavior` only inside scroll areas that need it. Touch targets follow WCAG 2.5.8. The full web checks are in `web.md`.

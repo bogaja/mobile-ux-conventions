@@ -86,17 +86,19 @@ A review comes back as one table, worst first, with a verdict:
 | 14 | Ask for permissions in context, with one sentence why | STANDARD, RESEARCH |
 | 15 | Make sign-in late and light | STANDARD |
 
-Full text: [SKILL.md](skills/mobile-ux-conventions/SKILL.md). Sources and common mistakes: [references/rules.md](skills/mobile-ux-conventions/references/rules.md). API names for SwiftUI, Compose, React Native and Flutter: [references/platforms.md](skills/mobile-ux-conventions/references/platforms.md).
+Full text: [SKILL.md](skills/mobile-ux-conventions/SKILL.md). Sources and common mistakes: [references/rules.md](skills/mobile-ux-conventions/references/rules.md). API names for SwiftUI, Compose, React Native and Flutter: [references/platforms.md](skills/mobile-ux-conventions/references/platforms.md). Nine extra checks for mobile web, PWAs and responsive dashboards: [references/web.md](skills/mobile-ux-conventions/references/web.md).
 
 ## What it does not do
 
-Visual style, motion, microcopy and full accessibility audits are out of scope. The skill works next to dedicated skills for those. It has no scripts and makes no network calls: it is three Markdown files.
+Visual style, motion, microcopy and full accessibility audits are out of scope. The skill works next to dedicated skills for those. It has no scripts and makes no network calls: it is four Markdown files.
+
+The 15 rules are a floor, not a full review. The skill tells the agent to look past the checklist, because a first test showed that a checklist alone narrows attention.
 
 It is not legal or store-review advice. A code review cannot see runtime behavior, so each review lists what was not checked. The rules are defaults for typical apps: a game or a camera app can break them with a stated reason.
 
 ## Test it
 
-[evals/](evals/) holds three test prompts and a small Expo app with planted problems. Run the first prompt with and without the skill and compare.
+[evals/](evals/) holds four test prompts and two small apps with planted problems: a native Expo app and a Next.js dashboard. Run a prompt with and without the skill and compare.
 
 ## Sources
 

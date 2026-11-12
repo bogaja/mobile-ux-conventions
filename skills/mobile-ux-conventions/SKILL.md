@@ -3,7 +3,7 @@ name: mobile-ux-conventions
 description: Evidence-graded mobile app UX conventions (Jakob's Law) for tab bars, back and close, gestures, touch targets, empty states, feedback, destructive actions, permissions and sign-in. Use when building or reviewing any iOS, Android, React Native, Flutter or mobile-web screen, navigation or flow.
 license: MIT
 metadata:
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # Mobile UX Conventions
@@ -24,9 +24,9 @@ The grade says where a rule comes from. It does not say how bad a violation is: 
 
 ## How to use this skill
 
-1. **Find the platform.** SwiftUI or UIKit is iOS. Compose or Views is Android. React Native, Expo and Flutter are both: apply each platform's rule, do not ship iOS patterns to Android. Mobile web and PWA use the Web notes.
+1. **Find the platform.** SwiftUI or UIKit is iOS. Compose or Views is Android. React Native, Expo and Flutter are both: apply each platform's rule, do not ship iOS patterns to Android. For a mobile web app, PWA or responsive dashboard, read `references/web.md` first: it says which rules change in a browser and adds checks W1 to W9.
 2. **Building:** apply the rules as defaults. Prefer the system component, because it usually carries the convention with it (back gesture, refresh control, tab bar). List every deliberate deviation and its reason in your summary.
-3. **Reviewing:** check rules 1 to 15 and E1 to E10, then report in the Review Output Format.
+3. **Reviewing:** check rules 1 to 15 and E1 to E10, then report in the Review Output Format. The rules are a floor, not the whole review. Walk each screen the way a user would, and also report navigation or usability problems that no rule names: a link that leaves the app area, a missing loading state, a dead end, lost work. A checklist narrows attention, so look past it on purpose.
 4. Read `references/rules.md` for exact wording, numbers, exceptions, sources and common mistakes. Read it before you call something a store or accessibility requirement. Read `references/platforms.md` for API names per framework.
 
 These are defaults for typical apps, not laws. A rule that does not fit the product (a game, a camera, a kiosk app) is a deviation to state, not a defect to force.
@@ -67,7 +67,7 @@ These are defaults for typical apps, not laws. A rule that does not fit the prod
 
 Check these too. Sources are in `references/rules.md`.
 
-- **E1** `STANDARD` Content respects safe areas and system bars. New Android versions draw edge to edge.
+- **E1** `STANDARD` Content respects safe areas and system bars, at every screen width and in landscape. New Android versions draw edge to edge.
 - **E2** `STANDARD` Each text field sets the right keyboard type. Password fields hide their content.
 - **E3** `CONVENTION` The keyboard never covers the focused field.
 - **E4** `STANDARD` Text scales with the system font size (Dynamic Type, `sp`).
@@ -98,11 +98,11 @@ State the scope, the platforms and what you could inspect (code only, or the run
 
 Severity follows the effect on the user, not the grade:
 
-- **HIGH:** a store policy is likely broken, a system gesture is blocked, a person cannot finish or leave a task, data is lost, or a control is very hard or impossible to use (a target far under the platform size, no accessible name). Name the effect on the user. A broken recommendation alone is not HIGH.
-- **MEDIUM:** learned behavior is broken or people must stop and think: wrong tab order or count, back arrow on a modal, missing empty state, permission prompts at launch, a dialog on every delete, a target somewhat under the recommended size.
+- **HIGH:** a store policy is likely broken, a system gesture is blocked, a person cannot finish or leave a task, work that cannot be recovered is lost (an upload, a submitted form), or a control is very hard or impossible to use (a target far under the platform size, no accessible name). Name the effect on the user. A broken recommendation alone is not HIGH.
+- **MEDIUM:** learned behavior is broken or people must stop and think: wrong tab order or count, back arrow on a modal, missing empty state, permission prompts at launch, a dialog on reversible deletes (a dialog on a permanent delete is correct), a target somewhat under the recommended size, typed text in a short form is lost.
 - **LOW:** polish, or a gap with no effect on the main task.
 
-Rate per platform when the rule differs (a 40×40 button is over the iOS minimum but under its default, and under the Android recommendation). From code alone you see the declared size, not the real hit area: report a likely problem and list the real size under Not checked. Cite `path:line`, or the screen and component when there is no code. Use the rule number or E number in the Rule column. Merge repeated issues into one row. Do not pad. After the table:
+Rate per platform when the rule differs (a 40×40 button is over the iOS minimum but under its default, and under the Android recommendation). From code alone you see the declared size, not the real hit area: report a likely problem and list the real size under Not checked. The same holds for any effect the code only suggests: rate by the likely effect, say that it is likely, and name the check that would confirm it. Cite `path:line`, or the screen and component when there is no code. Use the rule number, E number or W number in the Rule column. For a problem outside the rules, put `-` in Rule and Grade. Merge repeated issues into one row. Do not pad. After the table:
 
 1. **Deviations accepted:** conventions the app breaks with good reason, so nobody "fixes" them later.
 2. **Not checked:** what you could not verify from the material (runtime behavior, real hit areas, store exemptions), each with what is needed.
