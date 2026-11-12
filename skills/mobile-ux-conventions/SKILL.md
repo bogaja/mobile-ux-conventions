@@ -1,6 +1,6 @@
 ---
 name: mobile-ux-conventions
-description: Mobile app UX conventions users already expect (Jakob's Law), evidence-graded. Use for any iOS, Android, React Native, Expo, Flutter or mobile-web screen or flow: building, reviewing, or even a quick question about tabs, back/close, gestures, touch targets, empty states, permissions or sign-in.
+description: Mobile app UX conventions users already expect (Jakob's Law), evidence-graded. Use for any iOS, Android, React Native, Expo, Flutter or mobile-web screen or flow, when building, reviewing, or for a quick question about tabs, back/close, gestures, touch targets, empty states, permissions or sign-in.
 license: MIT
 metadata:
   version: 1.1.2
