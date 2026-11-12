@@ -3,7 +3,7 @@ name: mobile-ux-conventions
 description: Evidence-graded mobile app UX conventions (Jakob's Law) for tab bars, back and close, gestures, touch targets, empty states, feedback, destructive actions, permissions and sign-in. Use when building or reviewing any iOS, Android, React Native, Flutter or mobile-web screen, navigation or flow.
 license: MIT
 metadata:
-  version: 1.1.0
+  version: 1.1.1
 ---
 
 # Mobile UX Conventions
@@ -26,7 +26,7 @@ The grade says where a rule comes from. It does not say how bad a violation is: 
 
 1. **Find the platform.** SwiftUI or UIKit is iOS. Compose or Views is Android. React Native, Expo and Flutter are both: apply each platform's rule, do not ship iOS patterns to Android. For a mobile web app, PWA or responsive dashboard, read `references/web.md` first: it says which rules change in a browser and adds checks W1 to W9.
 2. **Building:** apply the rules as defaults. Prefer the system component, because it usually carries the convention with it (back gesture, refresh control, tab bar). List every deliberate deviation and its reason in your summary.
-3. **Reviewing:** check rules 1 to 15 and E1 to E10, then report in the Review Output Format. The rules are a floor, not the whole review. Walk each screen the way a user would, and also report navigation or usability problems that no rule names: a link that leaves the app area, a missing loading state, a dead end, lost work. A checklist narrows attention, so look past it on purpose.
+3. **Reviewing:** check rules 1 to 15 and E1 to E10, then report in the Review Output Format. The rules are a floor, not the whole review. Walk each screen the way a user would, and also report navigation or usability problems that no rule names: a link that leaves the app area, a tap with no feedback, a dead end, lost work. A checklist narrows attention, so look past it on purpose.
 4. Read `references/rules.md` for exact wording, numbers, exceptions, sources and common mistakes. Read it before you call something a store or accessibility requirement. Read `references/platforms.md` for API names per framework.
 
 These are defaults for typical apps, not laws. A rule that does not fit the product (a game, a camera, a kiosk app) is a deviation to state, not a defect to force.
