@@ -1,9 +1,9 @@
 ---
 name: mobile-ux-conventions
-description: Evidence-graded mobile app UX conventions (Jakob's Law) for tab bars, back and close, gestures, touch targets, empty states, feedback, destructive actions, permissions and sign-in. Use when building or reviewing any iOS, Android, React Native, Flutter or mobile-web screen, navigation or flow.
+description: Mobile app UX conventions users already expect (Jakob's Law), evidence-graded. Use for any iOS, Android, React Native, Expo, Flutter or mobile-web screen or flow: building, reviewing, or even a quick question about tabs, back/close, gestures, touch targets, empty states, permissions or sign-in.
 license: MIT
 metadata:
-  version: 1.1.1
+  version: 1.1.2
 ---
 
 # Mobile UX Conventions
