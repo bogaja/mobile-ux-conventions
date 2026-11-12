@@ -1,0 +1,65 @@
+{
+  "skill_name": "mobile-ux-conventions",
+  "evals": [
+    {
+      "id": 1,
+      "name": "review-planted-violations",
+      "prompt": "I want to submit this Expo app to the App Store and Google Play next week. Review the navigation and UX of evals/fixtures/habit-app/App.tsx and tell me what to fix first.",
+      "files": ["evals/fixtures/habit-app/App.tsx"],
+      "expected_output": "A review in the skill's table format, worst first, ending with a verdict of Block.",
+      "assertions": [
+        "Flags Google sign-in for the primary account with no equivalent privacy-focused login on iOS as HIGH, cites App Store 4.8, and names Sign in with Apple as the usual way to meet it",
+        "Does not claim that offering Apple or Google sign-in is mandatory for email-only apps",
+        "Flags gestureEnabled: false as blocking the system back gesture",
+        "Flags six tabs and the Settings tab",
+        "Flags tab order: Profile first, home screen in the middle",
+        "Flags the back arrow on the modal NewHabit screen and asks for Close or Cancel",
+        "Flags the missing empty state on the habits list",
+        "Flags the three permission requests at launch",
+        "Flags the confirmation dialog on every delete and proposes Undo",
+        "Flags the red Save button",
+        "Flags the star icon for search and the missing tab labels",
+        "Flags the trash button (18 px icon, no padding or hitSlop) as a likely touch target problem and says the real hit area needs checking",
+        "Rates the 40x40 add button per platform: on iOS under the 44 pt default but over the 28 pt minimum, on Android under the 48 dp recommendation",
+        "Does not rate every STANDARD finding as HIGH: tab count, tab order and the modal back arrow are MEDIUM",
+        "Flags the missing loading or disabled state on Save or Log in",
+        "Flags the missing pull to refresh on the remote habits list",
+        "Gives different touch target numbers for iOS (44 pt) and Android (48 dp)",
+        "Every finding has a rule number or E number, a grade and a path:line location",
+        "Lists what could not be checked from code alone under Not checked",
+        "Ends with the verdict Block"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "build-tabs-and-empty-state",
+      "prompt": "Build the tab navigation and an empty Favorites screen for my recipe app in SwiftUI. Sections I have so far: Discover, Search, Favorites, Shopping List, Meal Plan, Settings, Profile.",
+      "files": [],
+      "expected_output": "SwiftUI code with five tabs or fewer, plus a short list of deviations and reasons.",
+      "assertions": [
+        "Uses five tabs or fewer and explains which sections were merged or moved",
+        "Settings is not a tab: it is reached from Profile or a toolbar gear",
+        "The home section (Discover) is the first tab and Profile is the last, or the search tab is trailing with a stated reason",
+        "Every tab has an icon and a text label",
+        "The Favorites empty state explains why it is empty and has one action that leads to adding a favorite",
+        "Uses system components (TabView, NavigationStack, ContentUnavailableView or equivalent)",
+        "States any deviation from a convention with its reason"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "center-create-button-question",
+      "prompt": "I'm building a personal finance tracker for iOS and Android. A video said the create button always goes in the middle of the tab bar. Should I put a big + there for adding a transaction?",
+      "files": [],
+      "expected_output": "A graded answer, not a yes. It separates the social-app habit from the platform guidance.",
+      "assertions": [
+        "Says the center create tab is a CONVENTION from social apps, not a platform STANDARD",
+        "Mentions that Apple says tab bars are for navigation, not actions",
+        "Names the floating action button as the usual Android option",
+        "Gives a concrete iOS alternative (toolbar button or a prominent in-content button)",
+        "Applies the Jakob test: looks at what the leading finance apps do",
+        "If a center button is used anyway, says it starts the create flow and is not a destination"
+      ]
+    }
+  ]
+}
