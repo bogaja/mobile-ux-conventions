@@ -16,16 +16,16 @@
         "Flags the back arrow on the modal NewHabit screen and asks for Close or Cancel",
         "Flags the missing empty state on the habits list",
         "Flags the three permission requests at launch",
-        "Flags the confirmation dialog on every delete and proposes Undo",
+        "Flags the delete confirmation (generic title, OK button) and names Undo as the first choice when the delete can be reversed",
         "Flags the red Save button",
         "Flags the star icon for search and the missing tab labels",
         "Flags the trash button (18 px icon, no padding or hitSlop) as a likely touch target problem and says the real hit area needs checking",
-        "Rates the 40x40 add button per platform: on iOS under the 44 pt default but over the 28 pt minimum, on Android under the 48 dp recommendation",
+        "Rates the 40x40 add button below HIGH for size alone and compares it with both the iOS 44 pt default and the Android 48 dp recommendation",
         "Does not rate every STANDARD finding as HIGH: tab count, tab order and the modal back arrow are MEDIUM",
         "Flags the missing loading or disabled state on Save or Log in",
         "Flags the missing pull to refresh on the remote habits list",
         "Gives different touch target numbers for iOS (44 pt) and Android (48 dp)",
-        "Every finding has a rule number or E number, a grade and a path:line location",
+        "Every finding has a path:line location with the file name; a finding for a numbered rule has that rule's grade, and only problems outside the rules use -",
         "Lists what could not be checked from code alone under Not checked",
         "Ends with the verdict Block"
       ]
@@ -41,7 +41,7 @@
         "Settings is not a tab: it is reached from Profile or a toolbar gear",
         "The home section (Discover) is the first tab and Profile is the last, or the search tab is trailing with a stated reason",
         "Every tab has an icon and a text label",
-        "The Favorites empty state explains why it is empty and has one action that leads to adding a favorite",
+        "The Favorites empty state explains why it is empty and has one action that leads to where recipes can be favorited (a stub screen is acceptable in a scaffold)",
         "Uses system components (TabView, NavigationStack, ContentUnavailableView or equivalent)",
         "States any deviation from a convention with its reason"
       ]
@@ -57,7 +57,7 @@
         "Mentions that Apple says tab bars are for navigation, not actions",
         "Names the floating action button as the usual Android option",
         "Gives a concrete iOS alternative (toolbar button or a prominent in-content button)",
-        "Applies the Jakob test: looks at what the leading finance apps do",
+        "Applies the Jakob test: makes the decision depend on what the leading finance apps do, or tells the user to check them",
         "If a center button is used anyway, says it starts the create flow and is not a destination"
       ]
     },

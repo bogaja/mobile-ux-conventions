@@ -3,7 +3,7 @@ name: mobile-ux-conventions
 description: Mobile app UX conventions users already expect (Jakob's Law), evidence-graded. Use for any iOS, Android, React Native, Expo, Flutter or mobile-web screen or flow, when building, reviewing, or for a quick question about tabs, back/close, gestures, touch targets, empty states, permissions or sign-in.
 license: MIT
 metadata:
-  version: 1.1.2
+  version: 1.1.3
 ---
 
 # Mobile UX Conventions
@@ -57,7 +57,7 @@ These are defaults for typical apps, not laws. A rule that does not fit the prod
 
 **12. Every action answers at once.** `RESEARCH`. Use these limits as a guide: about 0.1 s feels instant, so show a pressed state. Past 1 s people notice the wait, so show activity. Near 10 s attention is lost, so show progress and, where possible, a way to cancel. Show placeholders, not a blank wait. Block double submits. Haptics support visible feedback and never replace it.
 
-**13. Red means destructive or error, and deletes can be undone.** `STANDARD`. Keep the destructive meaning of red clear (the system also uses red for badges): an ordinary action like Save should not look like a destructive one. If the brand color is red, mark destructive actions in a second way. Never signal by color alone: add a label or icon. Common, reversible deletes get Undo and no confirmation dialog. Actions with serious or irreversible results get a confirmation whose button names the action ("Delete account"), not "OK".
+**13. Red means destructive or error, and deletes can be undone.** `STANDARD`. Keep the destructive meaning of red clear (the system also uses red for badges): an ordinary action like Save should not look like a destructive one. If the brand color is red, mark destructive actions in a second way. Never signal by color alone: add a label or icon. Common, reversible deletes get Undo and no confirmation dialog. Actions with serious or irreversible results get a confirmation whose button names the action ("Delete account"), not "OK". In a review, when the code does not show whether a delete can be undone, say so, name Undo as the first choice, and do not just polish the dialog.
 
 **14. Ask for permissions in context.** `STANDARD` and `RESEARCH`. Request when the person uses the feature that needs it, not at launch, unless the need is obvious (a navigation app and location). Explain the benefit in one full sentence. iOS: a custom pre-prompt has one button such as "Continue" that leads to the system alert, and does not imitate it (extra actions only where a legal consent needs them). Android: a rationale screen always offers a way to decline and keep using the app. Respect a denial: keep the app usable, do not nag, and offer the way to Settings when the person next asks for that feature.
 
@@ -102,7 +102,7 @@ Severity follows the effect on the user, not the grade:
 - **MEDIUM:** learned behavior is broken or people must stop and think: wrong tab order or count, back arrow on a modal, missing empty state, permission prompts at launch, a dialog on reversible deletes (a dialog on a permanent delete is correct), a target somewhat under the recommended size, typed text in a short form is lost.
 - **LOW:** polish, or a gap with no effect on the main task.
 
-Rate per platform when the rule differs (a 40×40 button is over the iOS minimum but under its default, and under the Android recommendation). From code alone you see the declared size, not the real hit area: report a likely problem and list the real size under Not checked. The same holds for any effect the code only suggests: rate by the likely effect, say that it is likely, and name the check that would confirm it. Cite `path:line`, or the screen and component when there is no code. Use the rule number, E number or W number in the Rule column. For a problem outside the rules, put `-` in Rule and Grade. Merge repeated issues into one row. Do not pad. After the table:
+Rate per platform when the rule differs (a 40×40 button is over the iOS minimum but under its default, and under the Android recommendation). From code alone you see the declared size, not the real hit area: report a likely problem and list the real size under Not checked. The same holds for any effect the code only suggests: rate by the likely effect, say that it is likely, and name the check that would confirm it. Cite `path:line` with the file name on every row, or the screen and component when there is no code. A row for a numbered rule always carries that rule's grade. Use the rule number, E number or W number in the Rule column. For a problem outside the rules, put `-` in Rule and Grade. Merge repeated issues into one row. Do not pad. After the table:
 
 1. **Deviations accepted:** conventions the app breaks with good reason, so nobody "fixes" them later.
 2. **Not checked:** what you could not verify from the material (runtime behavior, real hit areas, store exemptions), each with what is needed.
